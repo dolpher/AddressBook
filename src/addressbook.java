@@ -2,8 +2,9 @@
  * Created by жека on 09.11.2014.
  */
 public class addressbook {
-    public static address[] book = new address[10];
-    public static void add(address newEntry){
+    public address[] book = new address[10];
+    public static void add(addressbook abook, address newEntry){
+        address[] book = abook.book;
         if (book[book.length - 1] != null) {
             System.out.println(book[book.length - 1].name);
             address[] book2 = new address[book.length];
@@ -21,6 +22,7 @@ public class addressbook {
         }
     }
     public static int[] find(String name){
+         address[] book = abook.book;
         int mas = 0;
         for (int i = 0; i < book.length; i++) {
             if (book[i] != null) if (book[i].name.equals(name)) mas++;

@@ -13,7 +13,7 @@ public class addressuser {public static void main(String[] args) {
     phone = "89053564396";
     email = "Jeci@gmail.com";
     address adr = new address(name, phone, email);
-    adrBook.add(adr);
+    adrBook.add(adrBook, adr);
     name = "Смит";
     phone = "89999999999";
     email = "Smit@yandex.ru";

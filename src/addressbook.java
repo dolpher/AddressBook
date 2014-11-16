@@ -21,8 +21,8 @@ public class addressbook {
             }
         }
     }
-    public static int[] find(String name){
-         address[] book = abook.book;
+    public static int[] find(addressbook abook,String name){
+        address[] book = abook.book;
         int mas = 0;
         for (int i = 0; i < book.length; i++) {
             if (book[i] != null) if (book[i].name.equals(name)) mas++;
@@ -36,12 +36,14 @@ public class addressbook {
         }
         return newmas;
     }
-    public static void get(int index){
+    public static void get(addressbook abook, int index){
+        address[] book = abook.book;
         System.out.println("имя: " + book[index].name);
         System.out.println("номер телефона: " + book[index].phone);
         System.out.println("E-mail: " + book[index].email);
     }
-    public static void print(){
+    public static void print(addressbook abook){
+        address[] book = abook.book;
         System.out.println("Индекс / Имя / Телефон / Email");
         for (int i = 0; i < book.length; i++){
             if (book[i] != null) {
@@ -49,17 +51,20 @@ public class addressbook {
             }
         }
     }
-    public static void delete(int index){
+    public static void delete(addressbook abook, int index){
+        address[] book = abook.book;
         book[index] = null;
     }
-    public static int getCount(){
+    public static int getCount(addressbook abook){
+        address[] book = abook.book;
         int mas = 0;
         for (int i = 0; i < book.length; i++){
             if (book[i] != null) mas++;
         }
         return mas;
     }
-    public static void change(int index, String name, String phone, String email){
+    public static void change(addressbook abook, int index, String name, String phone, String email){
+        address[] book = abook.book;
         book[index] = new address(name, phone, email);
     }
 }

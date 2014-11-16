@@ -18,7 +18,7 @@ public class addressuser {public static void main(String[] args) {
     phone = "89999999999";
     email = "Smit@yandex.ru";
     adr = new address(name, phone, email);
-    adrBook.add(adr);
+    adrBook.add(adrBook,adr);
 
     while (true) {
         com = sc.nextInt();
@@ -31,23 +31,25 @@ public class addressuser {public static void main(String[] args) {
                 System.out.print("Введите E-mail: ");
                 email = sc.next();
                 adr = new address(name, phone, email);
-                adrBook.add(adr);
+                adrBook.add(adrBook,adr);
                 break;
             case 2:
                 System.out.print("Введите имя: ");
                 name = sc.next();
-                int[] find = adrBook.find(name);
+                int[] find = adrBook.find(adrBook,name);
                 System.out.print("Индексы ячеек с указанными именами: ");
-                if (find != null) for (int i = 0; i < find.length; i++) {System.out.print(find[i] + " ");}
+                if (find != null) for (int i = 0; i < find.length; i++) {
+                    System.out.println(i + " / " + adrBook.book[i].name + " / " + adrBook.book[i].phone + " / " + adrBook.book[i].email);
+                }
                 System.out.println();
                 break;
             case 3:
-                adrBook.print();
+                adrBook.print(adrBook);
                 break;
             case 4:
                 System.out.print("Введите индекс удаляемой записи: ");
                 ind = sc.nextInt();
-                adrBook.delete(ind);
+                adrBook.delete(adrBook,ind);
                 break;
             case 5:
                 System.out.print("Введите индекс изменяемой записи: ");
@@ -58,15 +60,15 @@ public class addressuser {public static void main(String[] args) {
                 phone = sc.next();
                 System.out.print("Введите новый Email: ");
                 email = sc.next();
-                adrBook.change(ind, name, phone, email);
+                adrBook.change(adrBook,ind, name, phone, email);
                 break;
             case 6:
                 System.out.print("Введите индекс записи: ");
                 ind = sc.nextInt();
-                adrBook.get(ind);
+                adrBook.get(adrBook,ind);
                 break;
             case 7:
-                System.out.println("Количество записей в книге: " + adrBook.getCount());
+                System.out.println("Количество записей в книге: " + adrBook.getCount(adrBook));
                 break;
             case 8:
                 list();

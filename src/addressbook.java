@@ -2,17 +2,15 @@
  * Created by жека on 09.11.2014.
  */
 public class addressbook {
-    public address[] book = new address[10];
+    public address[] book = new address[3];
     public static void add(addressbook abook, address newEntry){
         address[] book = abook.book;
         if (book[book.length - 1] != null) {
             System.out.println(book[book.length - 1].name);
-            address[] book2 = new address[book.length];
-            for (int i = 0; i < book2.length; i++) {book2[i] = book[i];}
-            book = new address[book2.length + 10];
-            for (int i = 0; i < book2.length; i++) {
-                book[i] = book2[i];
-            }
+            address[] book2 = new address[book.length + 10];
+            for (int i = 0; i < book.length; i++) {book2[i] = book[i];}
+            abook.book = book2;
+            book = book2;
         }
         for (int i = 0; i < book.length; i++){
             if (book[i] == null){
@@ -25,11 +23,11 @@ public class addressbook {
         address[] book = abook.book;
         int mas = 0;
         for (int i = 0; i < book.length; i++) {
-            if (book[i] != null) if (book[i].name.equals(name)) mas++;
+            if (book[i] != null && book[i].name.equals(name)) mas++;
         }
         int[] newmas = new int[mas];
         for (int i = 0, j= 0; i < book.length; i++) {
-            if (book[i] != null) if (book[i].name.equals(name)) {
+            if (book[i] != null && book[i].name.equals(name)) {
                 newmas[j] = i;
                 j++;
             }

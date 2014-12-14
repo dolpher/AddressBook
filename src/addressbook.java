@@ -1,6 +1,4 @@
-/**
- * Created by жека on 09.11.2014.
- */
+
 public class addressbook {
     public address[] book = new address[3];
     public static void add(addressbook abook, address newEntry){

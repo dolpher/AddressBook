@@ -1,7 +1,5 @@
 import java.util.Scanner;
-/**
- * Created by жека on 09.11.2014.
- */
+
 public class addressuser {public static void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     addressbook adrBook = new addressbook();

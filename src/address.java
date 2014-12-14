@@ -1,6 +1,4 @@
-/**
- * Created by жека on 09.11.2014.
- */
+
 public class address {
     public String name;
     public String phone;
